@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Page Form</title>
+    <style>
+        .page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="formContainer">
+        <div id="page1" class="page">
+            <h2>Página 1 - Datos Personales</h2>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" required>
+            <br>
+            <button onclick="nextPage()">Siguiente</button>
+        </div>
+
+        <div id="page2" class="page">
+            <h2>Página 2 - Familiares</h2>
+            <label for="relative">Familiar:</label>
+            <input type="text" id="relative" placeholder="Nombre/Relación/Edad">
+            <button onclick="addRelative()">Agregar</button>
+            <ul id="relativeList"></ul>
+            <button onclick="prevPage()">Anterior</button>
+            <button onclick="nextPage()">Siguiente</button>
+        </div>
+
+        <div id="page3" class="page">
+            <h2>Página 3 - Condiciones Pre-Existentes de Salud</h2>
+            <label for="condition">Condición:</label>
+            <input type="text" id="condition" placeholder="Nombre de la condición">
+            <button onclick="addCondition()">Agregar</button>
+            <ul id="conditionList"></ul>
+            <button onclick="prevPage()">Anterior</button>
+            <button onclick="nextPage()">Siguiente</button>
+        </div>
+
+        <div id="page4" class="page">
+            <h2>Página 4 - Internamientos Realizados</h2>
+            <label for="admissionDate">Fecha:</label>
+            <input type="date" id="admissionDate">
+            <br>
+            <label for="medicalCenter">Centro Médico:</label>
+            <input type="text" id="medicalCenter">
+            <br>
+            <label for="diagnosis">Diagnóstico:</label>
+            <input type="text" id="diagnosis">
+            <button onclick="addAdmission()">Agregar</button>
+            <ul id="admissionList"></ul>
+            <button onclick="prevPage()">Anterior</button>
+            <button onclick="nextPage()">Siguiente</button>
+        </div>
+
+        <div id="page5" class="page">
+            <h2>Página 5 - Presentar los datos registrados</h2>
+            <pre id="formData"></pre>
+            <button onclick="prevPage()">Anterior</button>
+            <button onclick="submitForm()">Enviar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
